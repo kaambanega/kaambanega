@@ -12,6 +12,7 @@
     </head>
 
     <body>
+    	<a href="/kaambanega/register">Register</a>
         <form action="#" name="firstForm" id="firstForm">
 
             <table>
