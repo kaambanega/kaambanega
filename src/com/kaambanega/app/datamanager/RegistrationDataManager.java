@@ -30,6 +30,7 @@ public class RegistrationDataManager implements MessageSourceAware {
 		WebApplicationContext webAppContext = ContextLoader.getCurrentWebApplicationContext();
 		messageSource = (MessageSource) webAppContext.getBean("messageSource");
 		String salt = messageSource.getMessage("password.salt", null, Locale.US);
+		CommonMember.appendLogFile("salt value is: " + salt);
         sb.append("INSERT INTO user_mst(user_id, password, user_typ, email_id, is_actv) VALUES(:user_id, MD5(CONCAT('"+salt+"', ':password')), :user_typ, :email_id, :is_actv)");
         CommonMember.appendLogFile("I anm IN hhhh" + sb.toString());
         return su.persist("kaambanega", sb.toString(), new BeanPropertySqlParameterSource(rfb));

@@ -18,6 +18,10 @@
           p:url="${jdbc.url}"
           p:username="${jdbc.username}"
           p:password="${jdbc.password}" /-->
+          
+   <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource" >
+    	<property name="basename" value="classpath:messages" />
+    </bean>
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
 
